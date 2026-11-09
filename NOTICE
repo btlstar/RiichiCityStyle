@@ -1,5 +1,5 @@
-RiichiStyle
-Copyright 2026 RiichiStyle contributors.
+RiichiCityStyle
+Copyright 2026 RiichiCityStyle contributors.
 
 Local-cosmetics Lua, resource builder and recovery installer originate from
 btlstar/AkagiPlus, plugins/riichicity_local, commit
@@ -12,7 +12,7 @@ Desktop-manager patterns and build tooling are adapted from
 btlstar/ZhangxinPlus, Apache-2.0:
 https://github.com/btlstar/ZhangxinPlus
 
-RiichiStyle is an independent local-cosmetics plugin. It does not include the
+RiichiCityStyle is an independent local-cosmetics plugin. It does not include the
 RiichiCityUnlock executable, authorization data or paid service components,
 and does not represent or claim affiliation with that project's author.
 

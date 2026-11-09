@@ -1,11 +1,11 @@
-# RiichiStyle · 一番街本地装扮
+# RiichiCityStyle · 一番街本地装扮
 
-麻雀一番街 Windows 客户端的独立本地装扮插件，提供轻量图形管理窗口。从 [Releases](https://github.com/btlstar/RiichiStyle/releases/tag/v0.1.0) 下载 Windows x64 便携包，完整解压后运行 `RiichiStyle.exe`。
+麻雀一番街 Windows 客户端的独立本地装扮插件，提供轻量图形管理窗口。从 [Releases](https://github.com/btlstar/RiichiCityStyle/releases/tag/v0.1.1) 下载 Windows x64 便携包，完整解压后运行 `RiichiCityStyle.exe`。
 
 ## 使用
 
 1. 正常启动一番街，完成官方资源更新后退出游戏。
-2. 打开 RiichiStyle，选择包含 `Mahjong-JP.exe` 的 `Game` 目录。
+2. 打开 RiichiCityStyle，选择包含 `Mahjong-JP.exe` 的 `Game` 目录。
 3. 点击「查看状态」，确认资源已适配后点击「安装 / 更新」。
 4. 正常启动游戏，在原有角色、造型和装扮界面选择内容。
 5. 需要停用时，退出游戏并点击「还原游戏文件」。
@@ -24,7 +24,8 @@
 
 - 仅安装到已适配的客户端资源，未知文件不会被覆盖。
 - 自动复用与所选游戏目录匹配的既有恢复记录；不同安装目录使用独立备份。
-- 新安装的管理资料保存在 `%LOCALAPPDATA%/RiichiStyle`，窗口可打开实际备份目录。
+- 新安装的管理资料保存在 `%LOCALAPPDATA%/RiichiCityStyle`，窗口可打开实际备份目录。
+- 自动读取旧版管理配置及匹配的恢复记录，升级无需重新设置游戏目录；已有游戏内装扮选择保留。
 - 游戏运行时拒绝安装和还原，不会强制结束游戏进程。
 - 分发包不包含游戏资源、原始恢复备份、登录资料或个人配置。
 
@@ -36,4 +37,4 @@
 
 本项目从已验证的本地装扮模块拆分，来源和兼容标识说明见 [NOTICE](NOTICE)，代码采用 [Apache-2.0](LICENSE.txt)。第三方运行依赖的许可随便携包提供。
 
-RiichiStyle 为独立项目，不代表游戏官方或其他装扮工具作者。游戏名称和资源属于各自权利人。
+RiichiCityStyle 为独立项目，不代表游戏官方或其他装扮工具作者。游戏名称和资源属于各自权利人。

@@ -1,4 +1,4 @@
-"""RiichiStyle standalone desktop manager."""
+"""RiichiCityStyle standalone desktop manager."""
 import os
 from pathlib import Path
 from queue import Queue, Empty
@@ -19,7 +19,7 @@ class Application(ttk.Frame):
         self.game = tk.StringVar(value=service.load_game())
         self.message = tk.StringVar(value="选择游戏目录后查看状态。")
         self.location = tk.StringVar(value="安装前会先校验并备份原始文件。")
-        ttk.Label(self, text="RiichiStyle", font=("Microsoft YaHei UI", 23, "bold")).pack(anchor="w")
+        ttk.Label(self, text="RiichiCityStyle", font=("Microsoft YaHei UI", 23, "bold")).pack(anchor="w")
         ttk.Label(self, text=f"一番街本地装扮 · {TOOL_VERSION}").pack(anchor="w", pady=(4, 24))
         ttk.Label(self, text="游戏本体目录（包含 Mahjong-JP.exe）").pack(anchor="w")
         picker = ttk.Frame(self); picker.pack(fill="x", pady=(8, 20))
@@ -108,7 +108,7 @@ class Application(ttk.Frame):
 
 def main():
     window = tk.Tk()
-    window.title(f"RiichiStyle {TOOL_VERSION}")
+    window.title(f"RiichiCityStyle {TOOL_VERSION}")
     window.geometry("780x640"); window.minsize(740, 620)
     style = ttk.Style(window)
     if "vista" in style.theme_names():

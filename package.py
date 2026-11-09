@@ -37,16 +37,16 @@ def licenses(target):
 
 
 def main():
-    name = f"RiichiStyle-{TOOL_VERSION}-windows-x64"
+    name = f"RiichiCityStyle-{TOOL_VERSION}-windows-x64"
     stage = ROOT / "dist" / name
     if stage.exists():
         raise ValueError("Release folder already exists; inspect it before rebuilding.")
-    command = [sys.executable, "-m", "PyInstaller", "--noconfirm", "--windowed", "--onedir", "--noupx", "--name", "RiichiStyle", "--distpath", "build/frozen", "--workpath", "build/work", "--specpath", "build", "--add-data", str(ROOT / "local_cosmetics.lua") + ";.", "--add-data", str(ROOT / "plugin.toml") + ";."]
+    command = [sys.executable, "-m", "PyInstaller", "--noconfirm", "--windowed", "--onedir", "--noupx", "--name", "RiichiCityStyle", "--distpath", "build/frozen", "--workpath", "build/work", "--specpath", "build", "--add-data", str(ROOT / "local_cosmetics.lua") + ";.", "--add-data", str(ROOT / "plugin.toml") + ";."]
     for module in ["UnityPy", "archspec", "astc_encoder", "fmod_toolkit", "etcpak", "texture2ddecoder", "tpk_ar"]:
         command += ["--collect-all", module]
     command += [str(ROOT / "gui.py")]
     subprocess.run(command, cwd=ROOT, check=True)
-    shutil.copytree(ROOT / "build/frozen/RiichiStyle", stage)
+    shutil.copytree(ROOT / "build/frozen/RiichiCityStyle", stage)
     for file in ["README.md", "LICENSE.txt", "NOTICE"]:
         shutil.copy2(ROOT / file, stage / file)
     licenses(stage / "LICENSES")

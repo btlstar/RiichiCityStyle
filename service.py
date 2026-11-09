@@ -9,15 +9,23 @@ import install as installer
 
 
 def data_root():
+    return Path(os.environ.get("LOCALAPPDATA", str(Path.home()))) / "RiichiCityStyle"
+
+
+def legacy_data_root():
     return Path(os.environ.get("LOCALAPPDATA", str(Path.home()))) / "RiichiStyle"
 
 
 def load_game():
-    try:
-        return str(json.loads((data_root() / "gui.json").read_text("utf8")).get("game", ""))
-    except (OSError, ValueError):
-        candidate = Path(os.environ.get("APPDATA", "")) / "RiichicityLauncher/Game"
-        return str(candidate) if (candidate / "Mahjong-JP.exe").is_file() else ""
+    for folder in (data_root(), legacy_data_root()):
+        try:
+            value = json.loads((folder / "gui.json").read_text("utf8")).get("game", "")
+            if isinstance(value, str) and value:
+                return value
+        except (OSError, ValueError, AttributeError):
+            continue
+    candidate = Path(os.environ.get("APPDATA", "")) / "RiichicityLauncher/Game"
+    return str(candidate) if (candidate / "Mahjong-JP.exe").is_file() else ""
 
 
 def normalize_game(value):
@@ -29,13 +37,14 @@ def normalize_game(value):
     return game
 
 
-def choose_state(game, *, local=None, roaming=None):
+def choose_state(game, *, local=None, roaming=None, legacy=None):
     local = local or data_root()
     roaming = roaming or Path(os.environ.get("APPDATA", str(Path.home())))
     key = hashlib.sha256(str(game.resolve()).casefold().encode()).hexdigest()[:16]
     dedicated = local / "installs" / key
     target = installer.target_for(game)
-    for folder in [roaming / "akagiplus/riichicity-local", dedicated]:
+    legacy_install = (legacy or legacy_data_root()) / "installs" / key
+    for folder in [roaming / "akagiplus/riichicity-local", dedicated, legacy_install]:
         journal = folder / "install.json"
         if not journal.is_file():
             continue

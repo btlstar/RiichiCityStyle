@@ -40,6 +40,19 @@ class StateIsolation(unittest.TestCase):
             with self.assertRaises(ValueError):service.perform("install", str(self.game))
             write.assert_not_called()
 
+    def test_previous_name_preferences_are_read(self):
+        old = self.root / "previous"; old.mkdir()
+        (old / "gui.json").write_text(json.dumps({"game": str(self.game)}))
+        with patch.object(service, "data_root", return_value=self.local), patch.object(service, "legacy_data_root", return_value=old):
+            self.assertEqual(service.load_game(), str(self.game))
+
+    def test_previous_name_recovery_record_is_reused(self):
+        old = self.root / "previous"
+        folder = service.choose_state(self.game, local=old, roaming=self.roaming, legacy=self.root / "none")
+        folder.mkdir(parents=True)
+        (folder / "install.json").write_text(json.dumps({"target": str(service.installer.target_for(self.game))}))
+        self.assertEqual(service.choose_state(self.game, local=self.local, roaming=self.roaming, legacy=old), folder)
+
     def test_executable_path_is_accepted(self):
         self.assertEqual(service.normalize_game(str(self.game / "Mahjong-JP.exe")), self.game.resolve())
 
