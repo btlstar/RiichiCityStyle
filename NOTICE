@@ -1,0 +1,21 @@
+RiichiStyle
+Copyright 2026 RiichiStyle contributors.
+
+Local-cosmetics Lua, resource builder and recovery installer originate from
+btlstar/AkagiPlus, plugins/riichicity_local, commit
+26d216c34ecff4ef88eeaf15d0f84d777e310db2, under Apache-2.0:
+https://github.com/btlstar/AkagiPlus
+
+The original internal Lua identifiers and local preference keys are retained
+for compatibility with existing local selections and restoration records.
+Desktop-manager patterns and build tooling are adapted from
+btlstar/ZhangxinPlus, Apache-2.0:
+https://github.com/btlstar/ZhangxinPlus
+
+RiichiStyle is an independent local-cosmetics plugin. It does not include the
+RiichiCityUnlock executable, authorization data or paid service components,
+and does not represent or claim affiliation with that project's author.
+
+UnityPy (MIT), Python and bundled dependencies retain their own licenses,
+included in the portable package's LICENSES directory.
+Game clients and game assets are not distributed by this project.

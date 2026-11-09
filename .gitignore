@@ -1,0 +1,10 @@
+.venv/
+.local/
+__pycache__/
+build/
+dist/
+*.spec
+.env
+/AGENTS.md
+/notes/
+/research/

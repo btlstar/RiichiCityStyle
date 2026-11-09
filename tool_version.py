@@ -1,0 +1,2 @@
+TOOL_VERSION = "0.1.0"
+CORE_VERSION = "6"

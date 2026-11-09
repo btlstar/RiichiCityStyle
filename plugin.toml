@@ -1,0 +1,7 @@
+id = "riichistyle"
+name = "RiichiStyle"
+version = "0.1.0"
+core_version = "6"
+platform = "RiichiCity"
+entry = "gui.py"
+license = "Apache-2.0"
