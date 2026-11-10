@@ -54,7 +54,7 @@ def main():
     assert not any(Path(p).parts[0] in {".local", ".venv", "game", "logs", "originals", "staged"} for p in files)
     private_notes = {"COMMIT_MESSAGE.md", "VALIDATION.md", "RELEASE_NOTES.md", "AMATSUKI_FEASIBILITY.md"}
     assert not any(Path(p).name in private_notes or set(Path(p).parts) & {"docs", "notes", "research"} for p in files)
-    manifest = {"tool_version": TOOL_VERSION, "core_version": CORE_VERSION, "source_sha256": SOURCE_SHA256, "payload_sha256": digest(ROOT / "local_cosmetics.lua"), "files": files}
+    manifest = {"source_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(), "tool_version": TOOL_VERSION, "core_version": CORE_VERSION, "source_sha256": SOURCE_SHA256, "payload_sha256": digest(ROOT / "local_cosmetics.lua"), "files": files}
     (stage / "MANIFEST.json").write_text(json.dumps(manifest, indent=2), encoding="utf8")
     archive = ROOT / "dist" / (name + ".zip")
     with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED, compresslevel=6) as z:

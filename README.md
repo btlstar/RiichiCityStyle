@@ -1,6 +1,6 @@
 # RiichiCityStyle · 一番街本地装扮
 
-麻雀一番街 Windows 客户端的独立本地装扮插件，提供轻量图形管理窗口。从 [Releases](https://github.com/btlstar/RiichiCityStyle/releases/tag/v0.1.1) 下载 Windows x64 便携包，完整解压后运行 `RiichiCityStyle.exe`。
+麻雀一番街 Windows 客户端的独立本地装扮插件，提供轻量图形管理窗口。从 [Releases](https://github.com/btlstar/RiichiCityStyle/releases/tag/v0.1.2) 下载 Windows x64 便携包，完整解压后运行 `RiichiCityStyle.exe`。
 
 ## 使用
 
@@ -11,6 +11,8 @@
 5. 需要停用时，退出游戏并点击「还原游戏文件」。
 
 本地选择按游戏账号保存；还原资源文件后仍保留选择。安装前会先校验并备份原文件，检测到未知官方更新或热更新时会停止覆盖。请保留窗口显示的备份目录。
+
+本次为管理工具维护更新，继续使用已验证的装扮核心 6。
 
 ## 功能范围
 

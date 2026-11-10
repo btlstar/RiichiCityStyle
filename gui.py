@@ -38,7 +38,7 @@ class Application(ttk.Frame):
             button = ttk.Button(controls, text=title, command=lambda selected=action: self.start(selected))
             button.pack(side="left", padx=(0, 12), ipadx=10, ipady=5)
             self.inputs.append(button)
-        ttk.Label(self, text="先完成官方资源更新并退出游戏。安装后正常启动一番街，在游戏原有界面选择装扮。", wraplength=650).pack(anchor="w", pady=(0, 12))
+        ttk.Label(self, text="先完成官方资源更新并退出游戏。安装后正常启动麻雀一番街，在游戏原有界面选择装扮。", wraplength=650).pack(anchor="w", pady=(0, 12))
         ttk.Label(self, text="进桌后皮肤恢复默认时，请检查游戏的安全模式是否包含自己。", wraplength=650).pack(anchor="w", pady=(0, 16))
         ttk.Label(self, textvariable=self.location, wraplength=650, foreground="#666666").pack(anchor="w")
         self.folder_button = ttk.Button(self, text="打开备份目录", command=self.show_backup, state="disabled")
